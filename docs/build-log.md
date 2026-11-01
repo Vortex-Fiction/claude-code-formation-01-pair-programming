@@ -21,3 +21,7 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Task 5 — Add the books, loans and authors pages
 
 > Add a Vue 3 + Vite frontend on port 5173 with a `/api` proxy to the backend. One typed `api.ts` client, three tabs (Books, Loans, Authors) and an error banner that shows the API message. No CSS framework. Check in the browser: borrow a book, return it, and submit an empty borrower to see the 400 message.
+
+## Task 6 — Add the prerequisites for macOS and Windows
+
+> Write the README prerequisites as a table with one command per tool for macOS (Homebrew) and Windows (winget). Then clone the repo into an empty folder and check that `npm install`, `npm run back` and `npm run front` work with nothing else.
