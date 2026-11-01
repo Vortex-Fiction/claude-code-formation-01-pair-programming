@@ -6,7 +6,7 @@ export default tseslint.config(
   { ignores: ['**/dist/**', '**/node_modules/**', 'backend/data/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  ...vue.configs['flat/recommended'],
+  ...vue.configs['flat/essential'],
   {
     files: ['**/*.vue'],
     languageOptions: { parserOptions: { parser: tseslint.parser } },

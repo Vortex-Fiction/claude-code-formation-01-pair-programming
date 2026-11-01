@@ -17,3 +17,7 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Task 4 — Add loans with borrow and return
 
 > Write failing tests for `LoansService` first: borrow an available book, reject an unavailable book (409), reject a missing book or loan (404), return a loan, list the loans. Then add the DTO, the service and the routes `GET /api/loans`, `POST /api/loans`, `POST /api/loans/:id/return`. One behavior is deliberately left without a test and without a guard: it is a phase 1 exercise.
+
+## Task 5 — Add the books, loans and authors pages
+
+> Add a Vue 3 + Vite frontend on port 5173 with a `/api` proxy to the backend. One typed `api.ts` client, three tabs (Books, Loans, Authors) and an error banner that shows the API message. No CSS framework. Check in the browser: borrow a book, return it, and submit an empty borrower to see the 400 message.
