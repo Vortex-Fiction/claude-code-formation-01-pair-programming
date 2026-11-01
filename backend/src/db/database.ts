@@ -3,9 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient } from '@libsql/client';
 import { drizzle, type LibSQLDatabase } from 'drizzle-orm/libsql';
-import { CREATE_TABLES_SQL } from './create-tables';
-import * as schema from './schema';
-import { seedDatabase } from './seed';
+import { CREATE_TABLES_SQL } from './create-tables.js';
+import * as schema from './schema.js';
+import { seedDatabase } from './seed.js';
 
 export type Database = LibSQLDatabase<typeof schema>;
 

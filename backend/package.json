@@ -1,6 +1,7 @@
 {
   "name": "@formation/backend",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "nest start --watch",
     "build": "nest build",

@@ -3,9 +3,9 @@ import os from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { createDatabase } from './database';
-import * as schema from './schema';
-import { seedDatabase } from './seed';
+import { createDatabase } from './database.js';
+import * as schema from './schema.js';
+import { seedDatabase } from './seed.js';
 
 describe('createDatabase', () => {
   it('creates the tables and seeds them on an empty database', async () => {
