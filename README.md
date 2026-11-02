@@ -4,21 +4,22 @@ A small library app (books, authors, loans) used for the phase 1 exercises. The 
 
 ## Prerequisites
 
-Install these tools before the session. You need Node.js 20.19 or later. On Windows, use an x64 computer: the SQLite driver has no Windows ARM build.
+Install these tools before the session. You need Node.js 22.13 or later. On Windows, use an x64 computer: the SQLite driver has no Windows ARM build.
 
-On Windows, first allow PowerShell to run the npm and Claude Code launchers (once per user):
+On Windows, first allow PowerShell to run the npm launcher (once per user):
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
-| Tool        | macOS (Homebrew)                           | Windows (winget, in PowerShell)            |
-| ----------- | ------------------------------------------ | ------------------------------------------ |
-| Node.js LTS | `brew install node`                        | `winget install OpenJS.NodeJS.LTS`         |
-| git         | `brew install git`                         | `winget install Git.Git`                   |
-| GitHub CLI  | `brew install gh`                          | `winget install GitHub.cli`                |
-| Claude Code | `npm install -g @anthropic-ai/claude-code` | `npm install -g @anthropic-ai/claude-code` |
-| Vale        | `brew install vale`                        | `winget install errata-ai.Vale`            |
+| Tool        | macOS (Homebrew)                  | Windows (winget, in PowerShell)       |
+| ----------- | --------------------------------- | ------------------------------------- |
+| Node.js LTS | `brew install node`               | `winget install OpenJS.NodeJS.LTS`    |
+| git         | `brew install git`                | `winget install Git.Git`              |
+| GitHub CLI  | `brew install gh`                 | `winget install GitHub.cli`           |
+| Claude Code | `brew install --cask claude-code` | `winget install Anthropic.ClaudeCode` |
+
+Close and open your terminal again after the installation, so that it finds the new commands.
 
 Then, on both systems:
 
@@ -27,9 +28,7 @@ gh auth login
 claude
 ```
 
-`claude` asks you to sign in the first time. Vale is not necessary before phase 2.
-
-Close and open your terminal again after the installation, so that it finds the new commands.
+`claude` asks you to sign in the first time.
 
 ## Run
 
@@ -39,6 +38,11 @@ cd claude-code-formation-01-pair-programming
 npm install
 npm run back
 ```
+
+`npm install` shows two messages. You can ignore them:
+
+- `13 moderate severity vulnerabilities`: these advisories are about the development tools. Do not run `npm audit fix --force`, because it installs incompatible major versions.
+- `install scripts blocked` for `esbuild` and `fsevents`: the app does not need these scripts. Do nothing.
 
 In a second terminal:
 

@@ -24,11 +24,11 @@ Invoke-RestMethod -Method Post -Uri http://localhost:3000/api/loans/1/return
 Invoke-RestMethod -Method Post -Uri http://localhost:3000/api/loans/1/return
 ```
 
-Le deuxième retour répond `201` et change `returnedAt` : c'est le bug.
+Le deuxième retour réussit (201) et change `returnedAt` : c'est le bug.
 
 ## Consignes
 
-1. Passez en mode plan (`Shift+Tab` jusqu'à « plan mode »).
+1. Passez en mode plan (`Shift+Tab` jusqu'à « plan mode » ; `Alt+M` sous Windows si `Shift+Tab` ne change pas de mode).
 2. Écrivez un prompt en trois parties. Demandez un plan, pas du code.
 3. Relisez le plan. Corrigez-le s'il ne commence pas par un test.
 4. Quittez le mode plan et laissez Claude :

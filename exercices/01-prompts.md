@@ -22,7 +22,7 @@ Rappel du modèle :
 4. `/clear`, puis envoyez votre version réécrite.
 5. Notez en deux lignes ce qui a changé dans la réponse.
 
-Ne laissez pas Claude modifier le code pendant cet exercice : refusez les modifications ou lancez-le en mode plan (`Shift+Tab` jusqu'à « plan mode »).
+Ne laissez pas Claude modifier le code pendant cet exercice : refusez les modifications ou lancez-le en mode plan (`Shift+Tab` jusqu'à « plan mode » ; `Alt+M` sous Windows si `Shift+Tab` ne change pas de mode).
 
 ## Réussi si
 

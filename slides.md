@@ -44,7 +44,7 @@ Repo : `claude-code-formation-01-pair-programming`
 
 # Ce qu'on ne colle jamais
 
-> « Si tu ne l'enverrais pas par courriel à un inconnu, ne le colle pas. »
+> « Ce que tu n'enverrais pas par courriel à un inconnu, ne le colle pas. »
 
 - Secrets, clés d'API, mots de passe
 - Fichiers `.env`
@@ -96,7 +96,7 @@ Repo : `claude-code-formation-01-pair-programming`
 
 **Great :** « `POST /api/authors` avec `{ "name": "Jane Austen" }` crée un second auteur de ce nom (`backend/src/authors/authors.service.ts`). Attendu : 409, comme pour un ISBN en double dans `BooksService.create`. Écris d'abord le test qui échoue, puis corrige. Ne touche à rien d'autre. »
 
-<!-- Rôle, tâche, format, contraintes. Le Great dit où, quoi, comment vérifier et ce qu'il ne faut pas faire. -->
+<!-- Contexte, tâche, format, contraintes. Le Great dit où, quoi, comment vérifier et ce qu'il ne faut pas faire. -->
 
 ---
 
@@ -137,7 +137,7 @@ Repo : `claude-code-formation-01-pair-programming`
 
 # Le mode plan
 
-- `Shift+Tab` jusqu'à « plan mode » : Claude lit et propose, **sans rien modifier**
+- `Shift+Tab` jusqu'à « plan mode » (`Alt+M` sous Windows si `Shift+Tab` ne change pas de mode) : Claude lit et propose, **sans rien modifier**
 - **Quand :** plusieurs fichiers, un choix de conception, un code que vous ne connaissez pas
 - **Quand pas :** une ligne à changer, une faute de frappe
 - Relisez le plan : c'est le moment le moins cher pour corriger
@@ -162,6 +162,8 @@ Repo : `claude-code-formation-01-pair-programming`
 - On ne mélange pas un bug et une feature
 - On ne garde pas une session « au cas où »
 - Une session courte et ciblée bat une longue session « qui connaît tout »
+
+<!-- Le contexte d'une tâche finie pèse sur la suivante : il prend de la place et détourne l'attention. /clear ne coûte rien, le CLAUDE.md est rechargé. -->
 
 ---
 
@@ -197,11 +199,12 @@ Repo : `claude-code-formation-01-pair-programming`
 - Il dit « ça passe » sans montrer la sortie des tests
 - Il modifie des fichiers hors du périmètre
 
+<!-- Un seul signe suffit pour s'arrêter : demander un résumé, vérifier ce qui a été fait, et repartir dans une session propre si besoin. -->
+
 ---
 
 # Les parades
 
-- Une tâche par session
 - Le plan (ou la spec) comme **ancre** qu'on fait relire
 - La contrainte la plus importante **à la fin** du message
 - `/compact` avec un résumé explicite, ou repartir propre avec ce résumé
@@ -218,6 +221,8 @@ Repo : `claude-code-formation-01-pair-programming`
 - Le changement est plus court que le prompt
 - Vous ne pouvez pas vérifier le résultat
 - Données sensibles en jeu
+
+<!-- Claude Code est un outil, pas un réflexe. Si vous ne pouvez pas vérifier le résultat, vous ne pouvez pas le livrer. -->
 
 ---
 
