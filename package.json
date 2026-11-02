@@ -12,11 +12,7 @@
     "front": "npm run dev --workspace frontend",
     "test": "npm run test --workspaces --if-present",
     "lint": "eslint . && prettier --check . && npm run typecheck --workspace backend",
-    "format": "prettier --write .",
-    "slides": "node scripts/build-slides.mjs"
-  },
-  "overrides": {
-    "image-size": "^2.0.4"
+    "format": "prettier --write ."
   },
   "engines": {
     "node": ">=20.19"
@@ -25,7 +21,6 @@
     "@eslint/js": "^10.0.0",
     "eslint": "^10.0.0",
     "eslint-plugin-vue": "^10.0.0",
-    "pptxgenjs": "^4.0.1",
     "prettier": "~3.6.2",
     "typescript-eslint": "^8.72.1",
     "vue-eslint-parser": "^10.4.1"

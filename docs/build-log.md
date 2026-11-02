@@ -37,7 +37,3 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Change — Build the backend with esbuild, as in Vortex
 
 > Bundle the backend with esbuild so that imports need no `.js` suffix. esbuild does not emit decorator metadata, so do what Vortex does: an explicit `@Inject(Class)` in every constructor, no `ValidationPipe` and no `class-validator`. Each service validates its own input and throws `BadRequestException`. Write the failing validation tests in the services first. `npm run lint` also type-checks the backend.
-
-## Change — Build an editable PowerPoint from slides.md
-
-> The Marp PPTX export is one image per slide: nothing can be edited. Add `npm run slides`: a pptxgenjs script reads `slides.md` and writes `slides.pptx` with real text, bullets, tables and speaker notes, on two layouts (cover and content).

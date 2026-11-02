@@ -12,10 +12,6 @@ export default tseslint.config(
     languageOptions: { parserOptions: { parser: tseslint.parser } },
   },
   {
-    files: ['**/scripts/**/*.mjs'],
-    languageOptions: { globals: { console: 'readonly', process: 'readonly' } },
-  },
-  {
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
     },
