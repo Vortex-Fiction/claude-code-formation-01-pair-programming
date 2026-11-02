@@ -25,3 +25,7 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Task 6 — Add the prerequisites for macOS and Windows
 
 > Write the README prerequisites as a table with one command per tool for macOS (Homebrew) and Windows (winget). Then clone the repo into an empty folder and check that `npm install`, `npm run back` and `npm run front` work with nothing else.
+
+## Task 7 — Add the phase 1 exercises
+
+> Write three exercises in French under `exercices/`: rewrite three vague prompts in three parts; fix a bug in plan mode with the test first; deliver a small backend + frontend improvement in one short session. Each exercise ends with clear success criteria.
