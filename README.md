@@ -51,6 +51,14 @@ npm run front
 
 The SQLite database is created in `backend/data/` on the first `npm run back`. To start again from the seed data, stop the API and delete `backend/data/`.
 
+## Slides
+
+`slides.md` is the source of the slides. To build an editable PowerPoint file (`slides.pptx`, for PowerPoint or Google Slides):
+
+```bash
+npm run slides
+```
+
 ## Check
 
 ```bash
