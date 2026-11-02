@@ -29,3 +29,7 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Task 7 — Add the phase 1 exercises
 
 > Write three exercises in French under `exercices/`: rewrite three vague prompts in three parts; fix a bug in plan mode with the test first; deliver a small backend + frontend improvement in one short session. Each exercise ends with clear success criteria.
+
+## Task 8 — Add the phase 1 slides
+
+> Write `slides.md` for Marp, in French, 24 slides in the order of the phase 1 outline. At most 5 bullets per slide, speaker notes on the theory slides. The Bad → OK → Great example must not give away an exercise. Render to HTML and PNG and check that no text overflows.
