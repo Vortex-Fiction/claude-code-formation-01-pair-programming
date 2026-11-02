@@ -91,10 +91,10 @@ Repo : `claude-code-formation-01-pair-programming`
 **Bad :** « Corrige la création d'auteur. »
 → Quel problème ? Où ? Comment savoir que c'est corrigé ?
 
-**OK :** « On peut créer un auteur dont le nom n'est fait que d'espaces. Corrige-le. »
+**OK :** « On peut créer deux auteurs avec le même nom. Empêche-le. »
 → La tâche est claire, mais pas la vérification.
 
-**Great :** « `POST /api/authors` accepte `{ "name": "   " }` (`backend/src/authors/authors.input.ts`). Attendu : 400. Écris d'abord le test qui échoue, puis corrige. Ne touche à rien d'autre. »
+**Great :** « `POST /api/authors` avec `{ "name": "Jane Austen" }` crée un second auteur de ce nom (`backend/src/authors/authors.service.ts`). Attendu : 409, comme pour un ISBN en double dans `BooksService.create`. Écris d'abord le test qui échoue, puis corrige. Ne touche à rien d'autre. »
 
 <!-- Rôle, tâche, format, contraintes. Le Great dit où, quoi, comment vérifier et ce qu'il ne faut pas faire. -->
 
