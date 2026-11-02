@@ -11,7 +11,7 @@
     "back": "npm run start --workspace backend",
     "front": "npm run dev --workspace frontend",
     "test": "npm run test --workspaces --if-present",
-    "lint": "eslint . && prettier --check .",
+    "lint": "eslint . && prettier --check . && npm run typecheck --workspace backend",
     "format": "prettier --write ."
   },
   "engines": {

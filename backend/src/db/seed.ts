@@ -1,5 +1,5 @@
-import type { Database } from './database.js';
-import { authors, books } from './schema.js';
+import type { Database } from './database';
+import { authors, books } from './schema';
 
 const SEED_AUTHORS = ['Jane Austen', 'Jules Verne', 'Mary Shelley'];
 

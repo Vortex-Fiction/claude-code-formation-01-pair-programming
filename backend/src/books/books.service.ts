@@ -1,10 +1,10 @@
 import { ConflictException, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import type { Book, BookWithAuthor } from '@formation/shared';
 import { eq } from 'drizzle-orm';
-import type { Database } from '../db/database.js';
-import { DATABASE } from '../db/database.module.js';
-import { authors, books } from '../db/schema.js';
-import { CreateBookDto } from './create-book.dto.js';
+import type { Database } from '../db/database';
+import { DATABASE } from '../db/database.module';
+import { authors, books } from '../db/schema';
+import { parseCreateBookInput } from './books.input';
 
 @Injectable()
 export class BooksService {
@@ -32,7 +32,8 @@ export class BooksService {
     return book;
   }
 
-  async create(input: CreateBookDto): Promise<Book> {
+  async create(body: unknown): Promise<Book> {
+    const input = parseCreateBookInput(body);
     const [author] = await this.database
       .select()
       .from(authors)

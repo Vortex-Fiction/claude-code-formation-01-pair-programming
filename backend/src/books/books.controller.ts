@@ -1,11 +1,10 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import type { Book, BookWithAuthor } from '@formation/shared';
-import { BooksService } from './books.service.js';
-import { CreateBookDto } from './create-book.dto.js';
+import { BooksService } from './books.service';
 
 @Controller('books')
 export class BooksController {
-  constructor(private readonly booksService: BooksService) {}
+  constructor(@Inject(BooksService) private readonly booksService: BooksService) {}
 
   @Get()
   list(): Promise<BookWithAuthor[]> {
@@ -13,7 +12,7 @@ export class BooksController {
   }
 
   @Post()
-  create(@Body() input: CreateBookDto): Promise<Book> {
-    return this.booksService.create(input);
+  create(@Body() body: unknown): Promise<Book> {
+    return this.booksService.create(body);
   }
 }

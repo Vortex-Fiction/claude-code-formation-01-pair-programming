@@ -1,8 +1,8 @@
-import { ConflictException, NotFoundException } from '@nestjs/common';
+import { BadRequestException, ConflictException, NotFoundException } from '@nestjs/common';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { BooksService } from '../books/books.service.js';
-import { createDatabase } from '../db/database.js';
-import { LoansService } from './loans.service.js';
+import { BooksService } from '../books/books.service';
+import { createDatabase } from '../db/database';
+import { LoansService } from './loans.service';
 
 describe('LoansService', () => {
   let booksService: BooksService;
@@ -28,6 +28,16 @@ describe('LoansService', () => {
     await expect(loansService.borrow({ bookId, borrower: 'Grace' })).rejects.toThrow(
       ConflictException,
     );
+  });
+
+  it('rejects a loan with an empty borrower', async () => {
+    await expect(loansService.borrow({ bookId, borrower: '' })).rejects.toThrow(
+      BadRequestException,
+    );
+  });
+
+  it('rejects a loan without a book id', async () => {
+    await expect(loansService.borrow({ borrower: 'Ada' })).rejects.toThrow(BadRequestException);
   });
 
   it('rejects borrowing a missing book', async () => {

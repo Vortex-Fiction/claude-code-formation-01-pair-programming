@@ -1,7 +1,7 @@
-import { ConflictException, NotFoundException } from '@nestjs/common';
+import { BadRequestException, ConflictException, NotFoundException } from '@nestjs/common';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { createDatabase } from '../db/database.js';
-import { BooksService } from './books.service.js';
+import { createDatabase } from '../db/database';
+import { BooksService } from './books.service';
 
 describe('BooksService', () => {
   let service: BooksService;
@@ -24,6 +24,26 @@ describe('BooksService', () => {
       authorId: firstBook.authorId,
     });
     expect(await service.list()).toHaveLength(7);
+  });
+
+  it('rejects a book without a title', async () => {
+    await expect(service.create({ isbn: '1', authorId: 1 })).rejects.toThrow(BadRequestException);
+  });
+
+  it('rejects a book with an empty isbn', async () => {
+    await expect(service.create({ title: 'X', isbn: '', authorId: 1 })).rejects.toThrow(
+      BadRequestException,
+    );
+  });
+
+  it('rejects an author id that is not an integer', async () => {
+    await expect(service.create({ title: 'X', isbn: '1', authorId: '1' })).rejects.toThrow(
+      BadRequestException,
+    );
+  });
+
+  it('rejects a body that is not an object', async () => {
+    await expect(service.create('book')).rejects.toThrow(BadRequestException);
   });
 
   it('rejects a book whose author does not exist', async () => {

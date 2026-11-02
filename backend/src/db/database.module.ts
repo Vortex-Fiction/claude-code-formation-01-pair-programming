@@ -1,11 +1,12 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { Global, Module } from '@nestjs/common';
-import { createDatabase } from './database.js';
+import { createDatabase } from './database';
 
 export const DATABASE = 'DATABASE';
 
-const DATABASE_FILE = path.join(import.meta.dirname, '..', '..', 'data', 'library.db');
+const BACKEND_FOLDER = path.join(import.meta.dirname, '..');
+const DATABASE_FILE = path.join(BACKEND_FOLDER, 'data', 'library.db');
 
 @Global()
 @Module({

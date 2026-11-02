@@ -33,3 +33,7 @@ This repo was built with Claude Code from a written plan. Each entry is the inst
 ## Task 8 — Add the phase 1 slides
 
 > Write `slides.md` for Marp, in French, 24 slides in the order of the phase 1 outline. At most 5 bullets per slide, speaker notes on the theory slides. The Bad → OK → Great example must not give away an exercise. Render to HTML and PNG and check that no text overflows.
+
+## Change — Build the backend with esbuild, as in Vortex
+
+> Bundle the backend with esbuild so that imports need no `.js` suffix. esbuild does not emit decorator metadata, so do what Vortex does: an explicit `@Inject(Class)` in every constructor, no `ValidationPipe` and no `class-validator`. Each service validates its own input and throws `BadRequestException`. Write the failing validation tests in the services first. `npm run lint` also type-checks the backend.

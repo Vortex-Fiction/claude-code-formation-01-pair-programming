@@ -1,11 +1,10 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Param, ParseIntPipe, Post } from '@nestjs/common';
 import type { Loan } from '@formation/shared';
-import { CreateLoanDto } from './create-loan.dto.js';
-import { LoansService } from './loans.service.js';
+import { LoansService } from './loans.service';
 
 @Controller('loans')
 export class LoansController {
-  constructor(private readonly loansService: LoansService) {}
+  constructor(@Inject(LoansService) private readonly loansService: LoansService) {}
 
   @Get()
   list(): Promise<Loan[]> {
@@ -13,8 +12,8 @@ export class LoansController {
   }
 
   @Post()
-  borrow(@Body() input: CreateLoanDto): Promise<Loan> {
-    return this.loansService.borrow(input);
+  borrow(@Body() body: unknown): Promise<Loan> {
+    return this.loansService.borrow(body);
   }
 
   @Post(':id/return')

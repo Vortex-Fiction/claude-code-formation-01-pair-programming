@@ -94,7 +94,7 @@ Repo : `claude-code-formation-01-pair-programming`
 **OK :** « On peut créer un auteur dont le nom n'est fait que d'espaces. Corrige-le. »
 → La tâche est claire, mais pas la vérification.
 
-**Great :** « `POST /api/authors` accepte `{ "name": "   " }` (`backend/src/authors/create-author.dto.ts`). Attendu : 400. Écris d'abord le test qui échoue, puis corrige. Ne touche à rien d'autre. »
+**Great :** « `POST /api/authors` accepte `{ "name": "   " }` (`backend/src/authors/authors.input.ts`). Attendu : 400. Écris d'abord le test qui échoue, puis corrige. Ne touche à rien d'autre. »
 
 <!-- Rôle, tâche, format, contraintes. Le Great dit où, quoi, comment vérifier et ce qu'il ne faut pas faire. -->
 

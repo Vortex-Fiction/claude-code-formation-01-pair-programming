@@ -1,11 +1,11 @@
 import { ConflictException, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import type { Loan } from '@formation/shared';
 import { eq } from 'drizzle-orm';
-import { BooksService } from '../books/books.service.js';
-import type { Database } from '../db/database.js';
-import { DATABASE } from '../db/database.module.js';
-import { books, loans } from '../db/schema.js';
-import { CreateLoanDto } from './create-loan.dto.js';
+import { BooksService } from '../books/books.service';
+import type { Database } from '../db/database';
+import { DATABASE } from '../db/database.module';
+import { books, loans } from '../db/schema';
+import { parseCreateLoanInput } from './loans.input';
 
 @Injectable()
 export class LoansService {
@@ -18,7 +18,8 @@ export class LoansService {
     return this.database.select().from(loans);
   }
 
-  async borrow(input: CreateLoanDto): Promise<Loan> {
+  async borrow(body: unknown): Promise<Loan> {
+    const input = parseCreateLoanInput(body);
     const book = await this.booksService.getById(input.bookId);
     if (!book.isAvailable) {
       throw new ConflictException(`Book ${book.id} is already borrowed`);
