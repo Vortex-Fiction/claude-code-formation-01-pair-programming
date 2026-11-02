@@ -4,7 +4,13 @@ A small library app (books, authors, loans) used for the phase 1 exercises. The 
 
 ## Prerequisites
 
-Install these tools before the session.
+Install these tools before the session. You need Node.js 20.19 or later. On Windows, use an x64 computer: the SQLite driver has no Windows ARM build.
+
+On Windows, first allow PowerShell to run the npm and Claude Code launchers (once per user):
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
 
 | Tool        | macOS (Homebrew)                           | Windows (winget, in PowerShell)            |
 | ----------- | ------------------------------------------ | ------------------------------------------ |

@@ -137,7 +137,7 @@ Repo : `claude-code-formation-01-pair-programming`
 
 # Le mode plan
 
-- `Shift+Tab` : Claude lit et propose, **sans rien modifier**
+- `Shift+Tab` jusqu'à « plan mode » : Claude lit et propose, **sans rien modifier**
 - **Quand :** plusieurs fichiers, un choix de conception, un code que vous ne connaissez pas
 - **Quand pas :** une ligne à changer, une faute de frappe
 - Relisez le plan : c'est le moment le moins cher pour corriger

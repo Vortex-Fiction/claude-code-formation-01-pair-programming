@@ -8,7 +8,7 @@ Un emprunt déjà rendu peut être rendu une seconde fois. La date de retour est
 
 **Attendu :** le second retour répond `409 Conflict` et la première date de retour est conservée.
 
-Pour le reproduire :
+Pour le reproduire, partez d'une base neuve : arrêtez l'API, supprimez `backend/data/`, relancez `npm run back`. Puis :
 
 ```bash
 curl -X POST http://localhost:3000/api/loans -H "Content-Type: application/json" -d '{"bookId":1,"borrower":"Ada"}'
